@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./navbar.css";
 import ethereumKovan from "../../images/PAHYDMBoGPPsaT72wwVbhQlfCzcA8OssSK9id0YNSsA.webp";
 import arbitrumImage from "../../images/logo.svg";
@@ -8,13 +8,35 @@ import fantomTestnet from "../../images/Fantom-Testnet.png";
 import harmonyTestnet from "../../images/Harmony-Testnet.jpg";
 import poaNetworkSokol from "../../images/POANetworkSokol.png";
 import dPolygonMumbai from "../../images/dPolygonMumbai.png";
+import NetworkContext from "../../Context/Context";
+
 const Navbar = () => {
   const [userToggle, setUserToggle] = useState(false);
   const [networkListPopover, setNetworkListPopover] = useState(false);
-  const[network,setNetwork] = useState(<>
+  const {selectedNetwork , setSelectedNetwork} =useContext(NetworkContext)
 
-  </>) 
 
+
+
+
+  const userToggleMode = () => {
+    if (!userToggle) setUserToggle(true);
+    else setUserToggle(false);
+  };
+
+  const networkListToggle = () => {
+    if (!networkListPopover) setNetworkListPopover(true);
+    else setNetworkListPopover(false);
+  };
+
+  const handleNetwork = (img, name) => {
+    const obj = {
+      name,
+      img,
+    };
+    setSelectedNetwork(obj);
+    setNetworkListPopover(false);
+  };
 
   return (
     <div className="header">
@@ -28,13 +50,10 @@ const Navbar = () => {
           <div className="right_content">
             <div className="networks">
               <div className="networkList">
-                <div
-                  className="network_State"
-                  onClick={() => setNetworkListPopover(!networkListPopover)}
-                >
+                <div className="network_State" onClick={networkListToggle}>
                   <p>
-                    <img src={ethereumKovan} className="networksImg" alt="" />
-                    Ethereum Kovan
+                    <img src={selectedNetwork.img} className="networksImg" alt="" />
+                    <span id="smallText">{selectedNetwork.name}</span>
                   </p>
                   <span>
                     <svg
@@ -51,77 +70,108 @@ const Navbar = () => {
                     </svg>
                   </span>
                 </div>
-                {
-                    networkListPopover?<div class="network_popover">
-                  <ul id='mainUl'>
-                    <li>
-                      <img
-                        src={arbitrumImage}
-                        className="networksImg"
-                        alt="img"
-                      />
-                      <p>Arbitrum Rinkeby</p>
-                    </li>
-                    <li>
-                      <img
-                        className="networksImg"
-                        src={avalancheFuji}
-                        alt="img"
-                      />
-                      <p>Avalanche Fuji</p>
-                    </li>
-                    <li>
-                      <img
-                        className="networksImg"
-                        src={bnbChainTestnet}
-                        alt="img"
-                      />
-                      <p>BNB Chain Testnet</p>
-                    </li>
-                    <li>
-                      <img
-                        className="networksImg"
-                        src={arbitrumImage}
-                        alt="img"
-                      />
-                      <p>Ethereum Rinkeby</p>
-                    </li>
-                    <li>
-                      <img
-                        src={fantomTestnet}
-                        className="networksImg"
-                        alt="img"
-                      />
-                      <p>Fantom Testnet</p>
-                    </li>
-                    <li>
-                      <img
-                        src={harmonyTestnet}
-                        className="networksImg"
-                        alt="img"
-                      />
-                      <p>Harmony Testnet</p>
-                    </li>
-                    <li>
-                      <img
-                        src={poaNetworkSokol}
-                        className="networksImg"
-                        alt="img"
-                      />
-                      <p>POA Network Sokol</p>
-                    </li>
-                    <li>
-                      <img
-                        src={dPolygonMumbai}
-                        className="networksImg"
-                        alt="img"
-                      />
-                      <p>Polygon Mumbai</p>
-                    </li>
-                  </ul>
-                </div>:null
-                }
-                
+                {networkListPopover ? (
+                  <div class="network_popover">
+                    <ul id="mainUl">
+                      <li
+                        onClick={() =>
+                          handleNetwork(arbitrumImage, "Arbitrum Rinkeby")
+                        }
+                      >
+                        <img
+                          src={arbitrumImage}
+                          className="networksImg"
+                          alt="img"
+                        />
+                        <p>Arbitrum Rinkeby</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(avalancheFuji, "Avalanche Fuji")
+                        }
+                      >
+                        <img
+                          className="networksImg"
+                          src={avalancheFuji}
+                          alt="img"
+                        />
+                        <p>Avalanche Fuji</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(bnbChainTestnet, "BNB Chain Testnet")
+                        }
+                      >
+                        <img
+                          className="networksImg"
+                          src={bnbChainTestnet}
+                          alt="img"
+                        />
+                        <p>BNB Chain Testnet</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(arbitrumImage, "Ethereum Rinkeby")
+                        }
+                      >
+                        <img
+                          className="networksImg"
+                          src={arbitrumImage}
+                          alt="img"
+                        />
+                        <p>Ethereum Rinkeby</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(fantomTestnet, "Fantom Testnet")
+                        }
+                      >
+                        <img
+                          src={fantomTestnet}
+                          className="networksImg"
+                          alt="img"
+                        />
+                        <p>Fantom Testnet</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(harmonyTestnet, "Harmony Testnet")
+                        }
+                      >
+                        <img
+                          src={harmonyTestnet}
+                          className="networksImg"
+                          alt="img"
+                        />
+                        <p>Harmony Testnet</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(poaNetworkSokol, "POA Network Sokol")
+                        }
+                      >
+                        <img
+                          src={poaNetworkSokol}
+                          className="networksImg"
+                          alt="img"
+                        />
+                        <p>POA Network Sokol</p>
+                      </li>
+                      <li
+                        onClick={() =>
+                          handleNetwork(dPolygonMumbai, "Polygon Mumbai")
+                        }
+                      >
+                        <img
+                          src={dPolygonMumbai}
+                          className="networksImg"
+                          alt="img"
+                        />
+                        <p>Polygon Mumbai</p>
+                      </li>
+                    </ul>
+                  </div>
+                ) : null}
               </div>
 
               <div className="connect_wallet">
@@ -142,7 +192,7 @@ const Navbar = () => {
                 </button>
               </div>
             </div>
-            <div className="user" onClick={() => setUserToggle(!userToggle)}>
+            <div className="user" onClick={userToggleMode}>
               <div class="icon">
                 <svg
                   style={{ fontSize: "25px", color: "#6d7380" }}

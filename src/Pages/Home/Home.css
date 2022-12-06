@@ -1,19 +1,221 @@
-.home{
+.home {
     background: #eef2fe;
     padding-bottom: 20px;
 }
+
 .container {
     padding: 0 30px;
     max-width: 1340px;
     margin: auto;
 }
-.notice_board{
+
+.notice_board {
     background: #9b1fe9;
     padding: 25px 0;
 }
 
-.home .notice_board  .container p{
+.home .notice_board .container p {
     font-size: 16px;
     color: #fff;
     text-align: center;
+}
+
+.main_content .title {
+    margin: 48px 0;
+}
+
+.main_content .title h2 {
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "Varela Round", sans-serif;
+    color: #9b1fe9;
+    margin-bottom: 20px !important;
+}
+
+.main_content .title p {
+    font-size: 16px;
+    color: #6d7380;
+    width: 680px;
+    line-height: 25px;
+}
+
+.form {
+    padding: 25px 20px;
+    border: 1px solid #eee;
+    background: #fff;
+}
+
+.form .warning {
+    background: #eef2fe;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 1px;
+}
+
+.form .warning p {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.form .info_form {
+    width: 50%;
+    margin-top: 15px !important;
+}
+
+.form .info_form .wallet_address {
+    width: 100%;
+}
+.form .info_form .wallet_address , .req-type label {
+    font-weight: 600;
+    color: #9b1fe9;
+    font-size: 13px;
+    width: 100%;
+}
+.form .info_form .wallet_address .input_Wall {
+    margin-right: 10px !important;
+    width: 100%;
+    display: inline-flex;
+}
+.form .info_form .wallet_address .input_Wall input {
+    margin-top: 5px!important;
+    outline: none;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+}
+.form .recaptcha{
+    margin-top: 15px !important;
+}
+.form .req-button{
+    margin-top: 15px !important;
+}
+.form .req-button button{
+    background: #9b1fe9;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+#Request_Type {
+    margin-top: 10px!important;
+}
+
+
+
+/* Left input */
+.form .info_form .req-type .inputFields {
+    display: flex;
+}
+.form .info_form .req-type .inputFields .left_Input {
+    margin-right: 15px!important;
+    width: 100%;
+    display: inline-flex;
+}
+.form .info_form .req-type .inputFields .left_Input input {
+    margin-top: 5px!important;
+    outline: none;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+}
+.form .info_form .req-type .inputFields .rightInput{
+    width: 100%;
+    display: inline-flex;
+}
+.form .info_form .req-type .inputFields .rightInput input{
+    margin-top: 5px!important;
+    outline: none;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.form .req_history{
+    margin-top: 30px!important;
+
+}
+.form .req_history h2{
+    margin-bottom: 20px!important;
+    font-size: 15px;
+
+}
+.form .req_history .tabs span {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background: #f5f7fd;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+.form .req_history .tabs .active_tabs{
+    background: #00f!important;
+    color: #fff;
+
+}
+.form .req_history .history_text{
+    margin-top: 25px!important;
+
+}
+.form .req_history .history{
+    overflow-x: auto;
+}
+.form .req_history .history_text .history table {
+    border-collapse: collapse; 
+
+}
+.form .req_history .history_text .history table th ,td {
+    border: 1px solid #eee;
+    padding: 8px;
+    font-size: 14px;
+    min-width: 80px;
+
+}
+
+
+
+
+
+/* Media query */
+@media screen and (max-width: 600px){
+    .main_content .title{
+        width: 100%;
+    }
+    .main_content .title p{ 
+        width: 100%;
+    }
+    .form .info_form {
+        width: 100%;
+    }
+    .form .info_form .recaptcha .googleR{
+        width: 100% !important;
+        overflow: hidden;
+        
+    }
+    .form .req_history .tabs {
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .form .req_history .tabs span {
+        margin-bottom: 15px;
+    
+    }
+
 }
