@@ -189,5 +189,8 @@ a {
         width: 22px;
         height: 22px;
     }
+    .networksImg{
+        margin-left: 5px;
+    }
 
 }

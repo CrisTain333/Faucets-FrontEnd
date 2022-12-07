@@ -3,7 +3,8 @@ import "./Home.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { NavLink } from "react-router-dom";
 import NetworkContext from "../../Context/Context";
-
+import EthTable from "../../Components/ETHtable/EthTable";
+import TestLinkTable from "../../Components/TestTable/TestLinkTable";
 const Home = () => {
     const {selectedNetwork} = useContext(NetworkContext)
   const [ethTransaction, setEthTransaction] = useState(true);
@@ -18,7 +19,7 @@ const Home = () => {
     setTestLinkTransaction(false);
   };
 
-  const handletestLinkTransaction = () => {
+  const handleTestLinkTransaction = () => {
     setTestLinkTransaction(true);
     setEthTransaction(false);
   };
@@ -44,6 +45,7 @@ const Home = () => {
           <p>Notice here</p>
         </div>
       </div>
+
       {/* title_Container */}
       <div className="container">
         <div className="main_content">
@@ -145,7 +147,7 @@ const Home = () => {
                   ETH Transaction History
                 </span>
                 <span
-                  onClick={handletestLinkTransaction}
+                  onClick={handleTestLinkTransaction}
                   className={testLinkTransaction ? activeClassName : null}
                 >
                   TestLink Transaction History
@@ -154,75 +156,11 @@ const Home = () => {
               <div className="history_text">
                 <div className="history">
                   {ethTransaction && (
-                    <table>
-                      <thead class="table__head">
-                        <tr>
-                          <th>Sr</th>
-                          <th>Time</th>
-                          <th>Amount</th>
-                          <th>Hash</th>
-                        </tr>
-                      </thead>
-                      <tbody
-                        class="table__body"
-                        style={{ textAlign: "center" }}
-                      >
-                        <tr>
-                          <td>1</td>
-                          <td>12:30 AM</td>
-                          <td>487</td>
-                          <td>4s8er5s5fe57rjmxnfuewrurks</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>10:30 AM</td>
-                          <td>875</td>
-                          <td>sf7s7ers4e7r7wser</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>11:30 AM</td>
-                          <td>797</td>
-                          <td>se4s7er7</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <EthTable/>
                   )}
 
                   {testLinkTransaction && (
-                    <table>
-                      <thead class="table__head">
-                        <tr>
-                          <th>Sr</th>
-                          <th>Time</th>
-                          <th>Amount</th>
-                          <th>Hash</th>
-                        </tr>
-                      </thead>
-                      <tbody
-                        class="table__body"
-                        style={{ textAlign: "center" }}
-                      >
-                        <tr>
-                          <td>1</td>
-                          <td>08:30 AM</td>
-                          <td>748</td>
-                          <td>7s7effkeurusue4</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>10:23 AM</td>
-                          <td>974</td>
-                          <td>sfe7r7sr4fer</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>11:10 AM</td>
-                          <td>874</td>
-                          <td>s4e7s8er</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                   <TestLinkTable/>
                   )}
                 </div>
               </div>
