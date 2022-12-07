@@ -58,12 +58,12 @@ const Home = () => {
             </p>
           </div>
           <div className="form">
-            <div class="warning">
+            <div className="warning">
               <svg
                 style={{ fontSize: "20px", color: "#9b1fe9" }}
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 24 24"
                 height="1em"
                 width="1em"
@@ -84,39 +84,39 @@ const Home = () => {
             </div>
             <div className="info_form">
               <form onSubmit={handleSubmit}>
-                <div class="wallet_address">
-                  <label for="wallet">Wallet Address</label>
+                <div className="wallet_address">
+                  <label htmlFor="wallet">Wallet Address</label>
 
-                  <div class="input_Wall">
+                  <div className="input_Wall">
                     <input
                       type="text"
                       placeholder="Your Wallet Address..."
                       name="walletAddress"
-                      class="input_class"
+                      className="input_class"
                     />
                   </div>
                 </div>
                 <div id="Request_Type" className="req-type">
-                  <label for="wallet">Request Type</label>
-                  <div class="inputFields">
-                    <div class="left_Input" id="linput">
+                  <label htmlFor="wallet">Request Type</label>
+                  <div className="inputFields">
+                    <div className="left_Input" id="linput">
                       <input
                         type="text"
                         placeholder="Test link"
                         name="test_link"
                         disabled
-                        class="input_class"
+                        className="input_class"
                         value="20 Test Link"
                     
                       />
                     </div>
-                    <div class="rightInput">
+                    <div className="rightInput">
                       <input
                         type="text"
                         placeholder="ETH"
                         name="eth"
                         disabled
-                        class="input_class"
+                        className="input_class"
                         value="0.5 ETH"
                       />
                     </div>

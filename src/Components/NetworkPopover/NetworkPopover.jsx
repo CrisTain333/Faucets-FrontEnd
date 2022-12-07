@@ -22,7 +22,7 @@ const NetworkPopover = ({ setNetworkListPopover }) => {
 
   return (
     <>
-      <div class="network_popover">
+      <div className="network_popover">
         <ul id="mainUl">
           <li onClick={() => handleNetwork(arbitrumImage, "Arbitrum Rinkeby")}>
             <img src={arbitrumImage} className="networksImg" alt="img" />

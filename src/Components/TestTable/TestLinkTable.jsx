@@ -4,7 +4,7 @@ const TestLinkTable = () => {
     return (
         <>
              <table>
-                      <thead class="table__head">
+                      <thead className="table__head">
                         <tr>
                           <th>Sr</th>
                           <th>Time</th>
@@ -13,7 +13,7 @@ const TestLinkTable = () => {
                         </tr>
                       </thead>
                       <tbody
-                        class="table__body"
+                        className="table__body"
                         style={{ textAlign: "center" }}
                       >
                         <tr>

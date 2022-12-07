@@ -193,7 +193,7 @@
 
 
 /* Media query */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
     .main_content .title{
         width: 100%;
     }

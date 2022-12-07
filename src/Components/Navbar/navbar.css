@@ -160,7 +160,7 @@ a {
 
 
 /* Media query */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     #smallText {
         display: none;
 
@@ -180,6 +180,7 @@ a {
     }
 
     .connectButton {
+        margin-left: 20px;
         padding: 9px 0;
         border: none;
         font-size: 25px;
@@ -190,6 +191,9 @@ a {
         height: 22px;
     }
     .networksImg{
+        margin-left: 5px;
+    }
+    .user {
         margin-left: 5px;
     }
 

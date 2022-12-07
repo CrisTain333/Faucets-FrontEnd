@@ -1,0 +1,104 @@
+.Login_Container{
+    background-color: #eef2fe;
+}
+.Auth_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.Login_Container .Auth_container .form{
+    width: 30%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px -4px grey;
+}
+.Login_Container .Auth_container .form .title{
+    margin-bottom: 20px;
+}
+.Login_Container .Auth_container .form .title h2{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.Login_Container .Auth_container .form .inputGroup{
+    margin-bottom: 10px;
+}
+.Login_Container .Auth_container .form .inputGroup span{
+    position: absolute;
+    left: 63%;
+    margin-top: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.Login_Container .Auth_container .form .inputGroup label{
+    font-size: 12px;
+    font-weight: 600;
+}
+.Login_Container .Auth_container .form .inputGroup  input{
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #b8b4b4;
+    font-size: 14px;
+    background: transparent;
+}
+.Login_Container .Auth_container .form .inputGroup button{
+    text-transform: capitalize;
+    width: 100%;
+    padding: 10px 15px;
+    background: #9b1fe9;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px!important;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.Login_Container .Auth_container .form .footer{
+    text-align: center;
+    margin-top: 20px!important;
+}
+.Login_Container .Auth_container .form .footer p{
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+}
+.Login_Container .Auth_container .form .footer p a{
+    color: #9b1fe9!important;
+}
+.Login_Container .Auth_container .form .footer .socialLogin{
+    margin-top: 20px;
+}
+.Login_Container .Auth_container .form .footer .socialLogin .logins{
+    margin-top: 20px;
+     
+}
+.Login_Container .Auth_container .form .footer .socialLogin .logins svg{
+    margin: 10px;
+    font-size: 18px; 
+}
+
+
+
+/* Media query */
+
+@media screen and (max-width: 768px){
+    .Login_Container .Auth_container .form{
+        width: 75%;
+    }
+    .Login_Container .Auth_container .form .inputGroup span{
+        position: absolute;
+        left: 83%;
+        margin-top: 6px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
