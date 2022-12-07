@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   const onChange = (value) => {
-    console.log("Captcha value:", value);
+    console.log(value)
   };
 
   const handleSubmit =(e)=>{
@@ -126,7 +126,7 @@ const Home = () => {
                 <div className="recaptcha">
                   <div className="googleR">
                     <ReCAPTCHA
-                      sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                      sitekey="6LfuwWEjAAAAAEtGPKt-b8LnN6uPnSThSGkkZ-KK"
                       onChange={onChange}
                     />
                   </div>

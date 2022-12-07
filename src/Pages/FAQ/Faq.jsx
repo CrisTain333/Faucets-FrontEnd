@@ -54,7 +54,7 @@ const Faq = () => {
         </div>
         <div className="Faq_Accordion">
                 {
-                    data.map(qs =>  <AccordionCard qs={qs}></AccordionCard>)
+                    data.map((qs,i) =>  <AccordionCard qs={qs} key={i+1}></AccordionCard>)
                    
                 }
           
